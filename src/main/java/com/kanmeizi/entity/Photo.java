@@ -1,11 +1,18 @@
 package com.kanmeizi.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 /**
  * Created by liuzhengyang on 2014/11/26.
  */
+@Entity
 public class Photo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     // 图片title
@@ -53,5 +60,15 @@ public class Photo {
 
     public void setSrc(String src) {
         this.src = src;
+    }
+
+    @Override
+    public String toString() {
+        return "Photo{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", postDate=" + postDate +
+                ", src='" + src + '\'' +
+                '}';
     }
 }
