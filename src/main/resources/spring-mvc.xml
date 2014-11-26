@@ -7,11 +7,10 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        ">
 
-        <context:component-scan base-package="com.kanmeizi.controller"/>
-    <context:annotation-config></context:annotation-config>
+    <context:component-scan base-package="com.kanmeizi.controller"/>
 
-       <!--View Resolver-->
-       <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-             p:prefix="/jsp/"
-             p:suffix=".jsp"/>
+    <!--View Resolver-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/jsp/"
+          p:suffix=".jsp"/>
 </beans>
