@@ -26,17 +26,25 @@ public class AdminPhotoController {
     }
 
     // 新增页面
-    @RequestMapping("/add")
+    @RequestMapping("/new")
     public ModelAndView edit(){
         return new ModelAndView("/admin/photoAdd");
     }
 
     // 保存
     @RequestMapping("/save")
-    public ModelAndView save(Photo photo){
+    public ModelAndView save(Photo photo,String src){
+        System.out.println(src);
         photo.setPostDate(new Date());
         System.out.println(photo);
         photoRepository.save(photo);
         return new ModelAndView("redirect:/admin/photoList");
+    }
+
+    // 修改
+    @RequestMapping("/edit/{id}")
+    public ModelAndView edit(@PathVariable Long id){
+        Photo photo = photoRepository.findOne(id);
+        return new ModelAndView("admin/photoEdit", "photo", photo);
     }
 }

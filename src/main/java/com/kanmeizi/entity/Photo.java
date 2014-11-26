@@ -1,5 +1,7 @@
 package com.kanmeizi.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +20,7 @@ public class Photo {
     // 图片title
     private String title;
     // 上传时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date postDate;
     // 图片src
     private String src;

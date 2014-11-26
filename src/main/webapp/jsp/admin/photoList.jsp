@@ -20,10 +20,16 @@
 </head>
 <body>
 <a href="admin/photoList">返回控制台首页</a>
-<a href="admin/add"><button>添加新图片</button></a>
+<a href="admin/new"><button>添加新图片</button></a>
 <%=BasePathUtil.getBasePath(request)%>
-<table>
- <%--${fn:length(photos)}--%>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>title</th>
+        <th>src</th>
+        <th>postDate</th>
+        <th>操作</th>
+    </tr>
   <c:forEach items="${photos}" var="photo" varStatus="status">
     ${status.index}
     <tr>
@@ -31,6 +37,7 @@
       <td>${photo.title}</td>
       <td>${photo.src}</td>
       <td>${photo.postDate}</td>
+      <td><a href="admin/edit/${photo.id}">修改</a></td>
       <%--<td><fmt:formatDate value="${photo.postDate}" pattern="yyyy-MM-dd HH:mm:ss"/> </td>--%>
     </tr>
   </c:forEach>
