@@ -2,6 +2,7 @@ package com.kanmeizi.controller.admin;
 
 import com.kanmeizi.entity.Photo;
 import com.kanmeizi.repository.PhotoRepository;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import java.util.Date;
 @RequestMapping("/admin")
 @Controller
 public class AdminPhotoController {
+    private Logger logger = Logger.getLogger(AdminPhotoController.class);
 
     @Autowired
     private PhotoRepository photoRepository;
@@ -33,10 +35,9 @@ public class AdminPhotoController {
 
     // 保存
     @RequestMapping("/save")
-    public ModelAndView save(Photo photo,String src){
-        System.out.println(src);
+    public ModelAndView save(Photo photo){
         photo.setPostDate(new Date());
-        System.out.println(photo);
+        logger.info(photo);
         photoRepository.save(photo);
         return new ModelAndView("redirect:/admin/photoList");
     }
@@ -44,6 +45,7 @@ public class AdminPhotoController {
     // 修改
     @RequestMapping("/edit/{id}")
     public ModelAndView edit(@PathVariable Long id){
+        System.out.println(id);
         Photo photo = photoRepository.findOne(id);
         return new ModelAndView("admin/photoEdit", "photo", photo);
     }

@@ -38,7 +38,7 @@
       <tr>
       <tr>
         <td>Title</td>
-        <td><input type="text" name="title" value="${photo.src}"/></td>
+        <td><input type="text" name="title" value="${photo.title}"/></td>
       </tr>
       <tr>
         <td>Src</td>
@@ -46,7 +46,7 @@
       </tr>
       <tr>
         <td>PostDate</td>
-        <td><input type="text" name="postDatse" value="<fmt:formatDate value="${photo.postDate}" pattern="yyyy-MM-dd HH:mm:ss"/>"/> </td>
+        <td><input type="text" name="postDate" value="<fmt:formatDate value="${photo.postDate}" pattern="yyyy-MM-dd HH:mm:ss"/>"/></td>
       </tr>
       <tr>
         <td><input type="submit" value="保存"/></td>

@@ -99,16 +99,16 @@
       <artifactId>spring-test</artifactId>
       <version>4.1.2.RELEASE</version>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-spring-service-connector</artifactId>
-      <version>1.1.0.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-cloudfoundry-connector</artifactId>
-      <version>1.1.0.RELEASE</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.cloud</groupId>-->
+      <!--<artifactId>spring-cloud-spring-service-connector</artifactId>-->
+      <!--<version>1.1.0.RELEASE</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.cloud</groupId>-->
+      <!--<artifactId>spring-cloud-cloudfoundry-connector</artifactId>-->
+      <!--<version>1.1.0.RELEASE</version>-->
+    <!--</dependency>-->
 
     <!-- Datasource Pool-->
     <dependency>
