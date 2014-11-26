@@ -22,7 +22,8 @@
 <html>
 <head>
     <title></title>
-    <link href="/css/flat-ui.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/flat-ui.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -66,5 +67,8 @@
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
+<div id="mainContenxt">
+
+</div>
 </body>
 </html>

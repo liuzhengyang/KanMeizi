@@ -14,4 +14,10 @@ public class HomeController {
     public ModelAndView home(){
         return new ModelAndView("/index");
     }
+
+
+    @RequestMapping("test")
+    public ModelAndView testV1(){
+        return new ModelAndView("/index_v1");
+    }
 }
