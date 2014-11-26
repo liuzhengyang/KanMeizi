@@ -21,7 +21,6 @@
 <body>
 <a href="admin/photoList">返回控制台首页</a>
 <a href="admin/new"><button>添加新图片</button></a>
-<%=BasePathUtil.getBasePath(request)%>
 <table border="1">
     <tr>
         <th>ID</th>
@@ -31,7 +30,6 @@
         <th>操作</th>
     </tr>
   <c:forEach items="${photos}" var="photo" varStatus="status">
-    ${status.index}
     <tr>
       <td>${photo.id}</td>
       <td>${photo.title}</td>

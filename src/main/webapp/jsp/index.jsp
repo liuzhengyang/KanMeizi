@@ -11,17 +11,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
-    <%
+<%
   String basePath = BasePathUtil.getBasePath(request);
 %>
 <head>
     <title>admin</title>
     <base href="<%=basePath%>">
-</head>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title></title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/flat-ui.css" rel="stylesheet">
 </head>
@@ -32,7 +27,7 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-3">
             <span class="sr-only">Toggle navigation</span>
         </button>
-        <a class="navbar-brand" href="#">Flat UI</a>
+        <a class="navbar-brand" href="admin/photoList">控制台</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
