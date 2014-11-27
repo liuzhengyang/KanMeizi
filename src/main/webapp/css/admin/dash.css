@@ -2,3 +2,7 @@
     max-width: 36px;
     height:auto;
 }
+.hide{
+    position:relative;
+    display:block;
+}

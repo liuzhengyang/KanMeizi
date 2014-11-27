@@ -117,6 +117,10 @@
                             <td>${photo.postDate}</td>
                             <td><a href="javascript:void(0);">修改</a></td>
                         </tr>
+                        <%-- 隐藏的图片显示层--%>
+                        <tr>
+                            <td><img class="hide" src="image/img1.jpg"/></td>
+                        </tr>
                     </c:forEach>
                     </tbody>
                 </table>
