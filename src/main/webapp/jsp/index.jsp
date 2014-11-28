@@ -18,6 +18,7 @@
     <title>admin</title>
     <base href="<%=basePath%>">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
     <link href="css/flat-ui.css" rel="stylesheet">
 </head>
 <body>
@@ -65,5 +66,20 @@
 <div id="mainContenxt">
 
 </div>
+<div class="container">
+    <table data-toggle="table" data-url="data1.json" data-cache="false" data-height="299">
+        <thead>
+        <tr>
+            <th data-field="id">Item ID</th>
+            <th data-field="name">Item Name</th>
+            <th data-field="price">Item Price</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-table.min.js"></script>
+<script src="js/index/index.js"></script>
 </body>
 </html>
