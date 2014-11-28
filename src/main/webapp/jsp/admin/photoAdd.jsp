@@ -90,53 +90,28 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-      <form action="<%=basePath%>/admin/save" method="post">
-        <table>
-          <tr>
-            <td>Title</td>
-            <td><input type="text" name="title" /></td>
-          </tr>
-          <tr>
-            <td>Src</td>
-            <td><input type="text" name="src" /></td>
-          </tr>
-          <tr>
-            <td><input type="submit" value="保存"/></td>
-          </tr>
 
-        </table>
-      </form>
       <h2 class="sub-header">Section title</h2>
-      <a href="javascript:void(0);">新增</a>
       <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>src</th>
-            <th>缩略图</th>
-            <th>postTime</th>
-            <th>操作</th>
-          </tr>
-          </thead>
-          <tbody>
-          <c:forEach items="${photos}" var="photo">
+        <form action="<%=basePath%>/admin/add" method="post" enctype="multipart/form-data">
+          <table>
             <tr>
-              <td>${photo.id}</td>
-              <td>${photo.title}</td>
-              <td>${photo.src}</td>
-              <td><img class="small_img small_img_tag" src="image/img1.jpg"/></td>
-              <td>${photo.postDate}</td>
-              <td><a href="javascript:void(0);">修改</a></td>
+              <td>Title</td>
+              <td><input type="text" name="title" /></td>
             </tr>
-            <%-- 隐藏的图片显示层--%>
             <tr>
-              <td><img class="hide" src="image/img1.jpg"/></td>
+              <td>Src</td>
+              <td><input type="text" name="src" /></td>
             </tr>
-          </c:forEach>
-          </tbody>
-        </table>
+            <tr>
+              <td>上传</td>
+              <td><input type="file" name="file" accept="image/*"/></td>
+            </tr>
+            <tr>
+              <td><input type="submit" value="保存"/></td>
+            </tr>
+          </table>
+        </form>
       </div>
     </div>
   </div>
@@ -144,10 +119,10 @@
 <%--Bulletin--%>
 <div id="bulletin" class="bulletin">
   <ul>
-    <li style="top: 0px;"><a href="http://repos.wenzhixin.net.cn/">My Repositories - Show my repositories list.</a></li>
-    <li style="top: -23px;"><a href="http://wenzhixin.net.cn/p/multiple-select/">Multiple Select - Multiple select is a jQuery plugin to select multiple elements with checkboxes.</a></li>
-    <li style="top: -23px;"><a href="https://github.com/wenzhixin/bootstrap-show-password">Bootstrap Show Password - Show/hide password plugin for bootstrap.</a></li>
-    <li style="top: -23px;"><a href="http://wenzhixin.net.cn/p/bulletin/">Bulletin - A jQuery plugin to show bulletin for website.</a></li>
+    <li style="top: 0px;"><a href="http://liuzhengyang.github.io">My Repositories - Show my repositories list.</a></li>
+    <li style="top: -23px;"><a href="http://liuzhengyang.github.io">Multiple Select - Multiple select is a jQuery plugin to select multiple elements with checkboxes.</a></li>
+    <li style="top: -23px;"><a href="http://liuzhengyang.github.io">Bootstrap Show Password - Show/hide password plugin for bootstrap.</a></li>
+    <li style="top: -23px;"><a href="http://liuzhengyang.github.io">Bulletin - A jQuery plugin to show bulletin for website.</a></li>
   </ul>
   <div class="close"><a href="javascript:void(0)">×</a></div>
 </div>

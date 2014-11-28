@@ -92,7 +92,7 @@
 
 
             <h2 class="sub-header">Section title</h2>
-            <a href="javascript:void(0);">新增</a>
+            <a href="admin/add">新增</a>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -113,7 +113,7 @@
                             <td>${photo.src}</td>
                             <td><img class="small_img small_img_tag" src="image/img1.jpg"/></td>
                             <td>${photo.postDate}</td>
-                            <td><a href="javascript:void(0);">修改</a></td>
+                            <td><a href="admin/edit/${photo.id}">修改</a></td>
                         </tr>
                         <%-- 隐藏的图片显示层--%>
                         <tr>
