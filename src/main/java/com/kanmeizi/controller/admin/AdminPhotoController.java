@@ -24,7 +24,7 @@ public class AdminPhotoController {
 
     @RequestMapping("/photoList")
     public ModelAndView photoList(){
-        return new ModelAndView("admin/dashboard", "photos", photoRepository.findAll());
+        return new ModelAndView("/admin/photoList", "photos", photoRepository.findAll());
     }
 
     // 新增页面
@@ -50,9 +50,5 @@ public class AdminPhotoController {
         return new ModelAndView("admin/photoEdit", "photo", photo);
     }
 
-    // DashBoard
-    @RequestMapping("/dash")
-    public ModelAndView dash(){
-        return new ModelAndView("admin/dashboard");
-    }
+
 }
