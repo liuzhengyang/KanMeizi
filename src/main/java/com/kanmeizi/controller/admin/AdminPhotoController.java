@@ -2,16 +2,22 @@ package com.kanmeizi.controller.admin;
 
 import com.kanmeizi.entity.Photo;
 import com.kanmeizi.repository.PhotoRepository;
+import com.kanmeizi.util.BasePathUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.support.ServletContextResource;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 
 /**
@@ -57,12 +63,33 @@ public class AdminPhotoController {
         return "/admin/photoAdd";
     }
 
+    private static final String LOCATION_PREFIX = "/image/picture/";
+    private static final String IMAGE_URL_PREFIX = "/picture/";
+
     // 新增
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String add(Photo photo, @RequestParam("file") MultipartFile file){
-        photo.setPostDate(new Date());
-        photoRepository.save(photo);
+    public String add(Photo photo, @RequestParam("file") MultipartFile file, HttpServletRequest request) throws IOException {
+        if(!file.isEmpty()){
+            // webapp路径
+            String webapppath = request.getSession().getServletContext().getRealPath("");
+            logger.info(webapppath);
+            // 存放图片的路径
+            File parentDir = new File(webapppath + LOCATION_PREFIX);
+            if(!parentDir.exists()){
+                parentDir.mkdirs();
+            }
+            File toFile = new File(parentDir, file.getOriginalFilename());
+            file.transferTo(toFile);
+            // 设置上传时间
+            photo.setPostDate(new Date());
+            // 设置图片url
+            photo.setSrc(BasePathUtil.getBasePath(request) + IMAGE_URL_PREFIX + file.getOriginalFilename());
+            photoRepository.save(photo);
+        }
         return "redirect:/admin/photoList";
     }
 
+    private String getUrlForImage(){
+        return null;
+    }
 }

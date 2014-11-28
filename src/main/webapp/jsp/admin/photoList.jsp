@@ -111,7 +111,7 @@
                             <td>${photo.id}</td>
                             <td>${photo.title}</td>
                             <td>${photo.src}</td>
-                            <td><img class="small_img small_img_tag" src="image/img1.jpg"/></td>
+                            <td><img class="small_img small_img_tag" src="${photo.src}"/></td>
                             <td>${photo.postDate}</td>
                             <td><a href="admin/edit/${photo.id}">修改</a></td>
                         </tr>
