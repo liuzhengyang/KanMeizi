@@ -1,5 +1,5 @@
 /**
- * Created by liuzhengyang on 14-11-26.
+ * Created by liuzhengyang on 2014/11/28.
  */
 $(function(){
     $("#bulletin").bulletin();

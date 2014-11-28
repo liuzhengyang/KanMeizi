@@ -20,6 +20,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-table.min.css" rel="stylesheet">
     <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/bulletin.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -80,6 +81,23 @@
 <script src="js/jquery-1.11.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-table.min.js"></script>
+
+<%--Bulletin--%>
+<div id="bulletin" class="bulletin">
+    <ul>
+        <li style="top: 0px;"><a href="http://liuzhengyang.github.io">My Repositories - Show my repositories list.</a></li>
+        <li style="top: -23px;"><a href="http://liuzhengyang.github.io">Multiple Select - Multiple select is a jQuery plugin to select multiple elements with checkboxes.</a></li>
+        <li style="top: -23px;"><a href="http://liuzhengyang.github.io">Bootstrap Show Password - Show/hide password plugin for bootstrap.</a></li>
+        <li style="top: -23px;"><a href="http://liuzhengyang.github.io">Bulletin - A jQuery plugin to show bulletin for website.</a></li>
+    </ul>
+    <div class="close"><a href="javascript:void(0)">×</a></div>
+</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.bulletin.js"></script>
 <script src="js/index/index.js"></script>
 </body>
 </html>

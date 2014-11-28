@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
@@ -24,7 +27,7 @@ public class AdminPhotoController {
 
     @RequestMapping("/photoList")
     public ModelAndView photoList(){
-        return new ModelAndView("admin/dashboard", "photos", photoRepository.findAll());
+        return new ModelAndView("/admin/photoList", "photos", photoRepository.findAll());
     }
 
     // 新增页面
@@ -33,11 +36,9 @@ public class AdminPhotoController {
         return new ModelAndView("/admin/photoAdd");
     }
 
-    // 保存
-    @RequestMapping("/save")
-    public ModelAndView save(Photo photo){
-        photo.setPostDate(new Date());
-        logger.info(photo);
+    // 更新
+    @RequestMapping("/update")
+    public ModelAndView update(Photo photo){
         photoRepository.save(photo);
         return new ModelAndView("redirect:/admin/photoList");
     }
@@ -50,9 +51,18 @@ public class AdminPhotoController {
         return new ModelAndView("admin/photoEdit", "photo", photo);
     }
 
-    // DashBoard
-    @RequestMapping("/dash")
-    public ModelAndView dash(){
-        return new ModelAndView("admin/dashboard");
+    // 新增页
+    @RequestMapping(value = "/add",method = RequestMethod.GET)
+    public String addPhoto(){
+        return "/admin/photoAdd";
     }
+
+    // 新增
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String add(Photo photo, @RequestParam("file") MultipartFile file){
+        photo.setPostDate(new Date());
+        photoRepository.save(photo);
+        return "redirect:/admin/photoList";
+    }
+
 }
