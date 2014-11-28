@@ -1,5 +1,8 @@
 package com.kanmeizi.controller;
 
+import com.kanmeizi.repository.PhotoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,14 +13,21 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class HomeController {
+
+    @Autowired
+    private PhotoRepository photoRepository;
+
     @RequestMapping(value = {"", "/", "/home"})
     public ModelAndView home(){
-        return new ModelAndView("/index");
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("photos", photoRepository.findAll());
+        modelAndView.setViewName("/index");
+        return modelAndView;
     }
 
 
     @RequestMapping("test")
     public ModelAndView testV1(){
-        return new ModelAndView("/index_v1");
+        return new ModelAndView("/index");
     }
 }

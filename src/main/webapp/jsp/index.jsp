@@ -31,6 +31,8 @@
         <a class="navbar-brand" href="admin/photoList">控制台</a>
     </div>
 
+
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-3">
         <ul class="nav navbar-nav">
@@ -64,7 +66,17 @@
     </div><!-- /.navbar-collapse -->
 </nav>
 <div id="mainContenxt">
-
+    <div id="photoContainer">
+        <c:forEach items="${photos}" var="photo">
+            <div id="photoDiv">
+                <p>${photo.title}</p>
+                <p><fmt:formatDate value="${photo.postDate}" pattern="yyyy年MM月dd日 HH:mm:ss"/> </p>
+                <div id="imageDiv">
+                    <img src="${photo.src}"/>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 </div>
 
 <%--Bulletin--%>
