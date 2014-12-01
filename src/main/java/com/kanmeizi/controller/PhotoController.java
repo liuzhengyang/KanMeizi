@@ -24,7 +24,7 @@ public class PhotoController {
     // 默认首页
     @RequestMapping(value = {""})
     public ModelAndView index(){
-        return new ModelAndView("/index", "photos", photoRepository.findAll());
+        return new ModelAndView("/index", "photos", photoRepository.findOrderByPostDateDesc());
     }
 
 }

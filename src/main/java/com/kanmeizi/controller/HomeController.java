@@ -20,7 +20,7 @@ public class HomeController {
     @RequestMapping(value = {"", "/", "/home"})
     public ModelAndView home(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("photos", photoRepository.findAll());
+        modelAndView.addObject("photos", photoRepository.findOrderByPostDateDesc());
         modelAndView.setViewName("/index");
         return modelAndView;
     }
