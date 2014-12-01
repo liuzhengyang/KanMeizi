@@ -33,7 +33,7 @@ public class AdminPhotoController {
 
     @RequestMapping("/photoList")
     public ModelAndView photoList(){
-        return new ModelAndView("/admin/photoList", "photos", photoRepository.findAll());
+        return new ModelAndView("/admin/photoList", "photos", photoRepository.findOrderByPostDateDesc());
     }
 
     // 新增页面
