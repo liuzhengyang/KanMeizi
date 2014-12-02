@@ -46,5 +46,4 @@ public class PhotoController {
         modelAndView.setViewName("/pagination");
         return modelAndView;
     }
-
 }
