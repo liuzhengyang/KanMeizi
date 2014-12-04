@@ -1,11 +1,15 @@
 package com.kanmeizi.controller;
 
+import com.kanmeizi.entity.Photo;
 import com.kanmeizi.repository.PhotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * 首页控制器
@@ -26,8 +30,10 @@ public class HomeController {
     }
 
 
-    @RequestMapping("test")
-    public ModelAndView testV1(){
-        return new ModelAndView("/index");
+    @RequestMapping("/test")
+    @ResponseBody
+    public Object testV1(){
+        List<Photo> photoList = photoRepository.findOrderByPostDateDesc();
+        return photoList;
     }
 }
