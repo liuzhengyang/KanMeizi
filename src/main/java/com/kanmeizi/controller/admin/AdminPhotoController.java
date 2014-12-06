@@ -15,9 +15,14 @@ import org.springframework.web.context.support.ServletContextResource;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Date;
 
 /**
@@ -91,5 +96,21 @@ public class AdminPhotoController {
 
     private String getUrlForImage(){
         return null;
+    }
+
+    @RequestMapping("/downloadimage")
+    public void downloadImage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setHeader("content-disposition","attachment; filename=" + "图片下载");
+        byte[] buffer = new byte[1024];
+        File file = new File("C:\\Users\\liuzhengyang\\Pictures\\road.png");
+        FileInputStream fileInputStream = new FileInputStream(file);
+        OutputStream outputStream = response.getOutputStream();
+
+        while(fileInputStream.read(buffer) > 0){
+            outputStream.write(buffer);
+        }
+
+        outputStream.close();
+        fileInputStream.close();
     }
 }
