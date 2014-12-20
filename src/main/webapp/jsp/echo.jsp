@@ -139,7 +139,7 @@
              onclick="updateTarget(this.value);"/> <label for="radio1">programmatic API</label>
       <br/>
       <!-- echo example using new annotation API on the server side -->
-      <input id="radio2" type="radio" name="group1" value="/examples/websocket/echoAnnotation"
+      <input id="radio2" type="radio" name="group1" value="/kanmeizi/myHandler2"
              onclick="updateTarget(this.value);"/> <label for="radio2">annotation API (basic)</label>
       <br/>
       <!-- echo example using new annotation API on the server side -->

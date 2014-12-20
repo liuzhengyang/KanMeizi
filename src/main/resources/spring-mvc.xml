@@ -48,7 +48,9 @@
     <!-- enable websocket -->
     <websocket:handlers>
         <websocket:mapping path="/myHandler" handler="myHandler"/>
+        <websocket:mapping path="/myHandler2" handler="myHandler"/>
     </websocket:handlers>
 
     <bean id="myHandler" class="com.kanmeizi.controller.websocket.MyHandler"/>
+    <bean id="myHandler2" class="com.kanmeizi.controller.websocket.MyHandler"/>
 </beans>
