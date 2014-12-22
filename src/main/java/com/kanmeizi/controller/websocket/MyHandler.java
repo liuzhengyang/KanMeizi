@@ -34,6 +34,7 @@ public class MyHandler extends TextWebSocketHandler {
         log.info(session.getId() + " : " + session.getRemoteAddress() + " has connected");
         connections.add(session);
         broadcast(session.getId() + " connected!");
+        log.info(connections);
     }
 
     // 处理Pong
