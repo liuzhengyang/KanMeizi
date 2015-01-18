@@ -12,4 +12,7 @@ import java.util.List;
 public interface PhotoRepository extends JpaRepository<Photo, Long> {
     @Query("select p from Photo p order by p.postDate desc")
     List<Photo> findOrderByPostDateDesc();
+
+
+    List<Photo> findBySrcContainingOrTitleContaining(String src, String title);
 }

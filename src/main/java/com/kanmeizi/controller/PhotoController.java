@@ -11,9 +11,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by liuzhengyang on 2014/11/25.
@@ -45,5 +47,12 @@ public class PhotoController {
         modelAndView.addObject("totalElements", pageObj.getTotalElements());
         modelAndView.setViewName("/pagination");
         return modelAndView;
+    }
+
+
+    @RequestMapping("findPage")
+    @ResponseBody
+    public List<Photo> findPage(String src, String title){
+        return photoRepository.findBySrcContainingOrTitleContaining(src, title);
     }
 }
